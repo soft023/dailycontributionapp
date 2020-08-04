@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use Auth;
 use App\User;
+use redirect;
 use App\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -40,7 +41,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware('auth');
     }
 
     /**
@@ -71,9 +72,15 @@ class RegisterController extends Controller
 
 public function registercompany()
     {
-       //$this->companyvalidator($request->all())->validate();
+           // $this->companyvalidator($request->all())->validate();
             $filen = Input::file('logo')->getClientOriginalName();
-            $code = "0001"; 
+             $comp =  Company::latest()->first();
+           $code = "000".($comp['id'] + 1);
+
+
+
+
+
             $filename = $code.$filen;
             Input::file('logo')->move(public_path('companylogo'),$filename);
 
@@ -93,9 +100,9 @@ public function registercompany()
         ]);
 
           User::create([
-            'firstname' => 'Sheriffdeen',
-            'othername' => 'Kolawole',
-            'surname' => 'Fasasi',
+            'firstname' => '',
+            'othername' => '',
+            'surname' => '',
             'email' => Input::get('superemail'),
             'username' => Input::get('superusername'),
             'code' => $code,
@@ -103,13 +110,19 @@ public function registercompany()
             'password' => Hash::make("123456"),
         ]);
 
+        return redirect()->route('allcompany');
 
 
-        return "Successful";
+
+
+
 
     }
 
 
 
 
-    }
+
+
+
+}

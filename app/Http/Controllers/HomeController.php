@@ -27,8 +27,5 @@ class HomeController extends Controller
     }
 
 
-      public function registercompanyform()
-    {
-        return view('bgadmin.companyregistration');
-    }
+ 
 }

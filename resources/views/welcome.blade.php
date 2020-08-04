@@ -7,7 +7,7 @@
       <div class="container">
         <h1 class="masthead-heading mb-0">eCooperative</h1>
         <h2 class=" mb-0">...management made easy and more reliable...</h2>
-        <a href="#" class="btn btn-primary btn-xl rounded-pill mt-5">Start</a>
+        <a href="/login" class="btn btn-primary btn-xl rounded-pill mt-5">Start</a>
       </div>
     </div>
   {{--   <div class="bg-circle-1 bg-circle"></div>

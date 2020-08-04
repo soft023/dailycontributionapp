@@ -27,13 +27,16 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="/">Myco-operative</a>
+      <a class="navbar-brand" href="/well">Myco-operative</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item w3-text-red w3-margin-right">{{session('messagex')}}</li> 
+         <li class="nav-item w3-text-red">{{session('message')}}</li>
+          
         @if (Route::has('login'))
          @auth
          <li class="nav-item"><a class="nav-link" href="/home">Dashboard</a></li>      
@@ -45,8 +48,7 @@
          <form  id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
          {{ csrf_field() }}
          </form>
-
-
+         
           @else
           <li class="nav-item">
             <a class="nav-link" href="/register">Sign Up</a>
