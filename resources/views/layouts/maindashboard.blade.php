@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Dashboard</title>
-
+  <link rel="stylesheet" type="text/css" href="../css/w3.css">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -37,7 +37,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/" class="nav-link">Home</a>
+        <a href="/home" class="nav-link">Home</a>
       </li>
      
     </ul>
@@ -84,7 +84,7 @@
          {{--  <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> --}}
         </div>
         <div class="info">
-          <a href="#" class="d-block">{{Auth::user()->firstname}} - {{session('cname')}}</a>
+          <a href="/home" class="d-block">{{Auth::user()->firstname}} - {{session('cname')}}</a>
         </div>
       </div>
 
@@ -93,7 +93,7 @@
     <!-- Sidebar Menu -->
       <nav class="mt-2">
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <li class="nav-header">BACKEND MANAGEMENT</li>
+          <li class="nav-header w3-gray">BACKEND MANAGEMENT</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -131,7 +131,7 @@
 
 
 
-<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+{{-- <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
           <i class="nav-icon far fa-plus-square"></i>
@@ -163,7 +163,7 @@
           </ul>
           </li>
 
-          </ul>
+          </ul> --}}
 
 
 
@@ -185,13 +185,13 @@
           <ul class="nav nav-treeview">
 
           <li class="nav-item">
-          <a href="pages/examples/login.html" class="nav-link">
+          <a href="/backend/newrole" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
           <p>New</p>
           </a>
           </li>
           <li class="nav-item">
-          <a href="pages/examples/login.html" class="nav-link">
+          <a href="/backend/allrole" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
           <p>All</p>
           </a>
@@ -211,7 +211,7 @@
  <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header">USERS MANAGER</li>
+          <li class="nav-header w3-gray">USERS MANAGER</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -223,13 +223,13 @@
           </a>
           <ul class="nav nav-treeview">
           <li class="nav-item">
-          <a href="pages/examples/login.html" class="nav-link">
+          <a href="/usermanagement/newuser" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
           <p>New</p>
           </a>
           </li>
           <li class="nav-item">
-          <a href="pages/examples/register.html" class="nav-link">
+          <a href="/usermanagement/allusers" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
           <p>All</p>
           </a>
@@ -258,7 +258,7 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header">CUSTOMER MANAGEMENT</li>
+          <li class="nav-header w3-gray">CUSTOMER MANAGEMENT</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -301,7 +301,7 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header"> CUSTOMER ACCOUNT</li>
+          <li class="nav-header w3-gray"> CUSTOMER ACCOUNT</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -342,7 +342,7 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header">GL MANAGEMENT</li>
+          <li class="nav-header w3-gray">GL MANAGEMENT</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -385,7 +385,7 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header">POSTING MANAGEMENT</li>
+          <li class="nav-header w3-gray">POSTING MANAGEMENT</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -428,7 +428,7 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header">LOAN MANAGEMENT</li>
+          <li class="nav-header w3-gray">LOAN MANAGEMENT</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -470,7 +470,7 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header">FD MANAGEMENT</li>
+          <li class="nav-header w3-gray">FD MANAGEMENT</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -518,7 +518,7 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header">LOAN PRODUCTS</li>
+          <li class="nav-header w3-gray">LOAN PRODUCTS</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
@@ -566,7 +566,7 @@
 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         
 
-          <li class="nav-header">SAVINGS PRODUCT</li>
+          <li class="nav-header w3-gray">SAVINGS PRODUCT</li>
 
           <li class="nav-item has-treeview">
           <a href="#" class="nav-link">

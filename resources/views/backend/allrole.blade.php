@@ -12,7 +12,7 @@ Backend
 <header class="masthead text-center text-white">
 <div class="container">
 <div class="row justify-content-left text-dark">
-<div class="col-md-12 text-center w3-red"><h3><b>All Registered Company</b></h3></div>
+<div class="col-md-12 text-center w3-red"><h3><b>All Registered Roles</b></h3></div>
 
 
 
@@ -28,29 +28,20 @@ Backend
 <thead>
 <tr>
 <th>#</th>
-<th>Code</th>
 <th>Name</th>
-<th>Phone</th>
 <th>Status</th>
-<th>Logo</th>
-<th>Action</th>
 <th>Action</th>
 </tr>
 </thead>
 <tbody>
 <?php   $i = 1; ?>
-@foreach( $allstaff as $staff)
+@foreach( $allroles as $roles)
 
 <tr>
 <td>{{$i}}</td>
-<td>{{$staff['code']}}</td>
-<td>{{$staff['name']}}</td>
-<td>{{$staff['phone']}}</td>
-<td>{{$staff['status']}}</td>
-<td><img src="{{asset('/companylogo/').'/'.$staff['logo']}}" )}}" class="img-responsive w3-circle  w3-hover-opacity" width="40px" height="40px" alt="Staff Image"/></td>
-<td> <a class="btn btn-danger " href="/backend/viewcompany/{{$staff['id']}}" ><i class="fa fa-search"></i><b>View more</b></a></td>
-<td> <a class="btn btn-warning " href="/backend/updatecompany/{{$staff['id']}}" ><i class="fa fa-edit"></i><b>Update</b></a></td>
-
+<td>{{$roles['name']}}</td>
+<td>{{$roles['status']}}</td>
+<td> <a class="btn btn-primary " href="/backend/updaterole/{{$roles['id']}}" ><i class="fa fa-edit"></i><b>Update</b></a></td>
 </tr>
  <?php   $i++; ?>
  @endforeach

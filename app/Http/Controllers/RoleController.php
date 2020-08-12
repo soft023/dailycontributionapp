@@ -3,7 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Role;
+use App\User;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
+use Auth;
+use Session;
+
+
 
 class RoleController extends Controller
 {
@@ -12,9 +18,23 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    public function __construct()
     {
-        //
+       $this->middleware('auth');
+    }
+
+
+  public function index()
+    {
+        return view('backend.newrole');
+    }
+
+
+   public function allrole()
+    {
+        $result = Role::all();
+        return view('backend.allrole')->with('allroles',$result);
     }
 
     /**
@@ -22,9 +42,10 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function updaterole($id)
     {
-        //
+        $role = Role::all()->where('id',$id);
+        return view('backend.updaterole')->with('role',$role);
     }
 
     /**
@@ -33,9 +54,13 @@ class RoleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function registerrole()
     {
-        //
+           Role::create([
+            'name' => Input::get('rtitle'),
+            'status' => Input::get('rstatus'),
+        ]);
+           return redirect()->route('allrole');
     }
 
     /**
@@ -44,42 +69,15 @@ class RoleController extends Controller
      * @param  \App\Role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(Role $role)
-    {
-        //
+    public function updateroleinfo(Request $request)
+    { 
+      $id = Input::get('sid');   
+      $role = Role::find($id);
+      $role->name = Input::get('rtitle');
+      $role->status = Input::get('status');
+      $role->save();
+      return $this->allrole();
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Role $role)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Role $role)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Role  $role
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Role $role)
-    {
-        //
-    }
+   
 }

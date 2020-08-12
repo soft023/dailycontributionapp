@@ -1,27 +1,34 @@
-@extends('layouts.main')
-
-@section('content')
+@extends('layouts.maindashboardx')
+@section('title')
+New User Registration Form
+@endsection
+<!-- /.content-header -->
+@section('title2')
+New User
+@endsection
+@section('maincontent')
 <header class="masthead text-center text-white">
 <div class="container">
-    <div class="row justify-content-left">
-        <div class="col-md-12 text-center"><h3>Registeration Form</h3><br></div>
-        <div class="col-md-6">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+    <div class="row justify-content-left text-dark">
+        <div class="col-md-12 text-center w3-red"><h3><b>Registeration Form</b></h3></div>
+        <div class="col-md-6"><br><br>
 
-                        <div class="form-group row">
-                            <label class="col-md-4 col-form-label text-md-right">Firstname</label>
+<form method="POST" action="{{ route('register') }}">
+@csrf
 
-                            <div class="col-md-6">
-                                <input id="fname" type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}" required autocomplete="fname" >
+<div class="form-group row">
+<label class="col-md-4 col-form-label text-md-right">Firstname</label>
 
-                                @error('fname')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+<div class="col-md-6">
+    <input id="fname" type="text" class="form-control @error('fname') is-invalid @enderror" name="fname" value="{{ old('fname') }}" required autocomplete="fname" >
+
+    @error('fname')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+    @enderror
+</div>
+</div>
 
 
 
@@ -117,7 +124,7 @@
 
 
 
-            <div class="col-md-6">
+            <div class="col-md-6"><br><br>
            
           
 
@@ -128,7 +135,7 @@
                             <label class="col-md-4 col-form-label text-md-right">Phone Number</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" >
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phonenumber" required autocomplete="phone" >
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
@@ -151,16 +158,16 @@
                                 </select> 
                             </div>
                         </div>
-
+               
                         <div class="form-group row">
                          <label class="col-md-4 col-form-label text-md-right">Role</label>
                             <div class="col-md-6">
                                <select class="form-control" id="role" name="role" required>
+
                                 <option value="" disabled selected>Select User Role</option>  
-                                <option value="Superadmin"> Super Admin </option>
-                                <option value="Manager"> Manager </option>
-                                <option value="cso"> CSO </option>
-                                <option value="Teller"> Teller </option>
+                                @foreach( $roles as $role)
+                                <option value="{{ $role['name']}}"> {{ $role['name']}} </option>
+                                @endforeach
                                 </select> 
                             </div>
                         </div>
@@ -187,8 +194,8 @@
                   
                         </div>
 
-                            <div class="col-md-12 text-center"><br>
-                            <button type="submit" class="btn btn-lg btn-primary">
+                            <div class="col-md-12 text-center"><br><br>
+                            <button type="submit" class="btn btn-lg btn-success">
                             {{ __('Register') }}
                             </button>
                           </div>
