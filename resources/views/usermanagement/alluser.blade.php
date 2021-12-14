@@ -24,7 +24,7 @@ Backend
 </div>
 <div class="panel-body">
 <div class="table-responsive">
-<table class="table table-striped table-bordered table-hover">
+<table class="table table-striped w3-table w3-bordered table-bordered table-hover">
 <thead>
 <tr>
 <th>#</th>
@@ -34,7 +34,7 @@ Backend
 <th>Role</th>
 <th>Status</th>
 <th>Action</th>
-<th>Action</th>
+
 </tr>
 </thead>
 <tbody>
@@ -48,7 +48,7 @@ Backend
 <td>{{$user['username']}}</td>
 <td>{{$user['role']}}</td>
 <td>{{$user['status']}}</td>
-<td><a class="btn btn-danger " href="/usermanagement/updateuser/{{$user['id']}}" ><i class="fa fa-edit"></i><b>Update</b></a></td>
+<!--<td><a class="btn btn-danger " href="/usermanagement/updateuser/{{$user['id']}}" ><i class="fa fa-edit"></i><b>Update</b></a></td>-->
 <td><a class="btn btn-warning " href="/usermanagement/viewuser/{{$user['id']}}" ><i class="fa fa-edit"></i><b>View</b></a></td>
 </tr>
  <?php   $i++; ?>

@@ -110,7 +110,7 @@ User Information
 
 </div>
 <div class="col-md-12 text-center"><br><br>
-<a class="btn btn-lg btn-warning " href="/usermanagement/allusers" ><i class=""></i><b>Back</b></a><br><br><br><br><br><br>
+<a class="btn btn-lg btn-warning " href="javascript:history.back()"><b>Back</b></a><br><br><br><br><br><br>
 </div>
 
 </div>

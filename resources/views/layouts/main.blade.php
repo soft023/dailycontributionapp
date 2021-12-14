@@ -8,8 +8,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Myco-operative</title>
+  <title>BGMFB</title>
 
+
+<link rel="icon"  sizes="16x16" href="/companylogo/lg.jpeg">
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/w3.css">
@@ -27,7 +29,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="/well">Myco-operative</a>
+      <a class="navbar-brand" href="https://www.balogungambarimfb.com/">BGMFB</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -50,11 +52,12 @@
          </form>
          
           @else
-          <li class="nav-item">
-            <a class="nav-link" href="/register">Sign Up</a>
-          </li>
+      
           <li class="nav-item">
             <a class="nav-link" href="/login">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/employerselection">Quick Loan</a>
           </li>
              @endauth
              @endif
@@ -76,7 +79,7 @@
   <!-- Footer -->
   <footer class="py-5 bg-black">
     <div class="container">
-      <p class="m-0 text-center text-white small">Copyright &copy; Myco-operative - BGMFB IT 2020</p>
+ <p class="m-0 text-center text-white small">Copyright &copy; QUICK LOAN FORM - BGMFB IT - 2021</p>
     </div>
     <!-- /.container -->
   </footer>

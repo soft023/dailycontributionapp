@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 use Auth;
 use App\User;
 use redirect;
-use App\Company;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -38,7 +37,7 @@ class RegisterController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+       $this->middleware('auth');
     }
 
 
@@ -119,7 +118,7 @@ protected function update(Request $request)
 
 protected function register()
     {
-             $code = Auth::user()->code;
+          
              User::create([
             'firstname' => Input::get('fname'),
             'othername' => Input::get('oname'),
@@ -129,9 +128,8 @@ protected function register()
             'email' => Input::get('email'),
             'username' => Input::get('uname'),
             'phone' => Input::get('phonenumber'),
-            'code' => $code,
             'role' => Input::get('role'),
-            'status' => "Inactive",
+            'status' => "Active",
             'password' => Hash::make("123456"),
         ]);
 
@@ -139,55 +137,69 @@ protected function register()
     }
 
 
-public function registercompany()
-    {
-           // $this->companyvalidator($request->all())->validate();
-            $filen = Input::file('logo')->getClientOriginalName();
-             $comp =  Company::latest()->first();
-           $code = "000".($comp['id'] + 1);
+// public function registercompany()
+//     {
+//            // $this->companyvalidator($request->all())->validate();
+//             $filen = Input::file('logo')->getClientOriginalName();
+//              $comp =  Company::latest()->first();
+//            $code = "000".($comp['id'] + 1);
 
 
 
 
 
-            $filename = $code.$filen;
-            Input::file('logo')->move(public_path('companylogo'),$filename);
+//             $filename = $code.$filen;
+//             Input::file('logo')->move(public_path('companylogo'),$filename);
 
 
-            Company::create([
-            'code' => $code,
-            'name' => Input::get('cname'),
-            'email' => Input::get('email'),
-            'phone' => Input::get('phone'),
-            'address' => Input::get('address'),
-            'status' => "InActive",
-            'logo' =>  $filename,
-            'superusername' => Input::get('superusername'),
-            'superemail' => Input::get('superemail'),
-            'registeredby' => "System",
-            'password' => Hash::make("123456"),
-        ]);
+//             Company::create([
+//             'code' => $code,
+//             'name' => Input::get('cname'),
+//             'email' => Input::get('email'),
+//             'phone' => Input::get('phone'),
+//             'address' => Input::get('address'),
+//             'status' => "InActive",
+//             'logo' =>  $filename,
+//             'superusername' => Input::get('superusername'),
+//             'superemail' => Input::get('superemail'),
+//             'registeredby' => "System",
+//             'password' => Hash::make("123456"),
+//         ]);
 
-          User::create([
-            'firstname' => '',
-            'othername' => '',
-            'surname' => '',
-            'email' => Input::get('superemail'),
-            'username' => Input::get('superusername'),
-            'code' => $code,
-            'role' => "Admin",
-            'status' => "Inactive",
-            'password' => Hash::make("123456"),
-        ]);
-
-        return redirect()->route('allcompany');
-
+//           User::create([
+//             'firstname' => '',
+//             'othername' => '',
+//             'surname' => '',
+//             'email' => Input::get('superemail'),
+//             'username' => Input::get('superusername'),
+//             'code' => $code,
+//             'role' => "Admin",
+//             'status' => "Inactive",
+//             'password' => Hash::make("123456"),
+//         ]);
 
 
 
+//             $now = date('Y-m-d');
+//             $due = date('Y-m-d', strtotime($now . " +7 days"));
+            
+//             Payment::create([
+//             'code' => $code,
+//             'name' => Input::get('cname'),
+//             'due' => $due,
+//             'updatedby' => "System",
+//             'status' => "Running",
+//         ]);
 
 
-    }
+//         return redirect()->route('allcompany');
+
+
+
+
+
+
+//     }
 
 
 

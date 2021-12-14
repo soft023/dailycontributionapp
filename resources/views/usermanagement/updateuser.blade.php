@@ -173,6 +173,7 @@ Update User
 </div>
 
 <div class="col-md-12 text-center"><br><br>
+<a class="btn btn-lg btn-warning " href="javascript:history.back()" ><i class=""></i><b>Back</b></a>
 <button type="submit" class="btn btn-lg btn-success">Update</button>
 </div>
 </div></form>

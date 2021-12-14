@@ -50,33 +50,33 @@ class LoginController extends Controller
            $this->clearLoginAttempts($request);
            $this->authenticated($request, $this->guard()->user());
 
-             $code = Auth::user()->code;
-             $comp = Company::all()->where('code',$code);
-             foreach ($comp as $key) {
-             $logo = $key->logo;
-             $cname = $key->name;
-             $cstatus = $key->status;
-            }
+            //  $code = Auth::user()->code;
+            //  $comp = Company::all()->where('code',$code);
+            //  foreach ($comp as $key) {
+            //  $logo = $key->logo;
+            //  $cname = $key->name;
+            //  $cstatus = $key->status;
+            // }
 
-            Session::put('logo', $logo);
-            Session::put('cname', $cname);
+        //     Session::put('logo', $logo);
+        //     Session::put('cname', $cname);
         
-        //    return view('/dashboard');
-             if($cstatus == "Inactive" ){
-                $message = "Company is not Inactive, please contact the administrator";
-                 Session::put('message', $message);
-             }
-             if(Auth::user()->status == "Inactive" ){
-                $messagex = "Your profile is  Inactive, please contact the administrator";
-                Session::put('messagex', $messagex);
-             }
+        // //    return view('/dashboard');
+        //      if($cstatus == "Inactive" ){
+        //         $message = "Company is not Inactive, please contact the administrator";
+        //          Session::put('message', $message);
+        //      }
+        //      if(Auth::user()->status == "Inactive" ){
+        //         $messagex = "Your profile is  Inactive, please contact the administrator";
+        //         Session::put('messagex', $messagex);
+        //      }
 
-             if($cstatus == "Inactive" || Auth::user()->status == "Inactive"){
+        //      if($cstatus == "Inactive" || Auth::user()->status == "Inactive"){
 
-              $this->guard()->logout();
-              return $this->loggedOut($request) ?: redirect('/');
+        //       $this->guard()->logout();
+        //       return $this->loggedOut($request) ?: redirect('/');
 
-             }
+        //      }
 
         // $pass = Auth::user()->password;
         // if($pass == "$2y$10$79pDsHQ9371GLe/1ZO0YdOCj5Fh93AuZ8GbZ5qEa7dtbXUR1OYnsi"){

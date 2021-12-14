@@ -60,12 +60,11 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'teller' => \App\Http\Middleware\Teller::class,
-        'cso' => \App\Http\Middleware\Cso::class,
-        'ft' => \App\Http\Middleware\Ft::class,
-        'manager' => \App\Http\Middleware\Manager::class,
-        'companystatus' => \App\Http\Middleware\Companystatus::class,
-        'userstatus' => \App\Http\Middleware\Userstatus::class,
+        'operations' => \App\Http\Middleware\Operations::class,
+        'marketer' => \App\Http\Middleware\Marketer::class,
+        'control' => \App\Http\Middleware\Control::class,
+        'superadmin' => \App\Http\Middleware\Superadmin::class,
+      
        
     ];
 
